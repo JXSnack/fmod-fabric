@@ -1,3 +1,12 @@
 {
-    "require": [""]
+    "indirect": [
+        "maven@com.mojang:minecraft 1.21.1",
+        "maven@net.fabricmc:fabric-loader 0.20.1"
+    ],
+
+    "require": [
+        "maven@net.fabricmc.fabric-api:fabric-api 0.116.17+1.21.1"
+    ],
+
+    "maven": []
 }
