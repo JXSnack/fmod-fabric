@@ -14,6 +14,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     // Dependencies
+    %flatmod:dependencies%
 }
 
 processResources {
