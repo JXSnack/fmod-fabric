@@ -1,4 +1,8 @@
 {
+    "duplicateStrategies": {
+        "gradle.properties": "append"
+    },
+
     "indirect": [
         "maven@com.mojang:minecraft 1.21.1",
         "maven@net.fabricmc:fabric-loader 0.20.1"
