@@ -3,7 +3,7 @@
         "gradle.properties": "append"
     },
 
-    "retain": [".gradle"],
+    "retain": [".gradle", "run"],
 
     "indirect": [
         "maven@com.mojang:minecraft 1.21.1",
