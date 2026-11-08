@@ -10,4 +10,4 @@ pluginManagement {
 }
 
 // Should match your modid
-rootProject.name = ${project.base_name}
+rootProject.name = "${project.base_name}"
