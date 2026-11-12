@@ -20,7 +20,7 @@
         ]
     },
     "mixins": [
-        "modid.mixins.json"
+        "%flatmod:rootid%.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=${dep_fabric_loader}",
