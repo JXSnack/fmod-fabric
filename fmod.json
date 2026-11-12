@@ -3,6 +3,8 @@
         "gradle.properties": "append"
     },
 
+    "facetPlatform": "FABRIC",
+
     "retain": [".gradle", "run"],
     "extract": {
         "src/main/resources/fabric.mod.json": "resources/fabric.mod.json",
