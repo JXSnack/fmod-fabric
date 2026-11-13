@@ -23,7 +23,7 @@
         "%flatmod:rootid%.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=${dep_fabric_loader}",
+        "fabricloader": ">=${loader_version}",
         "minecraft": "~1.21.1",
         "java": ">=21",
         "fabric-api": "*"
