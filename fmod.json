@@ -1,6 +1,6 @@
 {
     "duplicateStrategies": {
-        "gradle.properties": "append"
+        "gradle.properties": "properties"
     },
 
     "facetPlatform": "FABRIC",
