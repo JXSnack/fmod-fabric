@@ -18,10 +18,16 @@ dependencies {
 }
 
 processResources {
-    inputs.properties project.properties
+    def resourceProperties = project.properties.findAll { key, value ->
+        value instanceof String ||
+        value instanceof Number ||
+        value instanceof Boolean
+    }
+
+    inputs.properties resourceProperties
 
     filesMatching("fabric.mod.json") {
-        expand project.properties
+        expand resourceProperties
     }
 }
 
