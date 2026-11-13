@@ -8,7 +8,8 @@
     "retain": [".gradle", "run"],
     "extract": {
         "src/main/resources/fabric.mod.json": "resources/fabric.mod.json",
-        "src/main/resources/modid.mixins.json": "resources/%flatmod:rootid%.mixins.json"
+        "src/main/resources/modid.mixins.json": "resources/%flatmod:rootid%.mixins.json",
+        ".gitignore": ".gitignore"
     },
 
     "indirect" : {
