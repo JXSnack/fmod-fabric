@@ -4,6 +4,8 @@ plugins {
 }
 
 repositories {
+    maven { url = "https://maven.parchmentmc.org" }
+
     %flatmod:maven%
 }
 
