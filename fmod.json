@@ -7,7 +7,7 @@
     "minecraft": "1.21.1",
 
     "remap": {
-        "tinyJar": "https://maven.lemonnik.dev/releases/me/jxsnack/tinymojmap/1.21.1/mojmap-1.21.1.jar",
+        "tinyJar": "https://maven.lemonnik.dev/releases/me/jxsnack/tinymojmap/1.21.1/mojmap-parchment-1.21.1.jar",
         "tinyPath": "mappings/mappings.tiny",
         "from": "intermediary",
         "to": "named"
