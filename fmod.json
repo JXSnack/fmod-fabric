@@ -4,6 +4,7 @@
     },
 
     "facetPlatform": "FABRIC",
+    "minecraft": "1.21.1",
 
     "remap": {
         "tinyJar": "https://maven.lemonnik.dev/releases/me/jxsnack/tinymojmap/1.21.1/mojmap-1.21.1.jar",
