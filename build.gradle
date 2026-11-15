@@ -3,6 +3,14 @@ plugins {
     id 'maven-publish'
 }
 
+loom {
+    runs {
+        configureEach {
+            runDir = "../../../run/"
+        }
+    }
+}
+
 repositories {
     maven { url = "https://maven.parchmentmc.org" }
 
@@ -59,6 +67,10 @@ jar {
     from("LICENSE") {
         rename { "${it}_$projectName"}
     }
+}
+
+tasks.named("jar") {
+    destinationDirectory = file("../../../dist/")
 }
 
 // configure the maven publication
