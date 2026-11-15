@@ -71,6 +71,7 @@ jar {
 
 tasks.named("jar") {
     destinationDirectory = file("../../../dist/")
+    archiveFileName = "${project.findProperty('jarName') ?: project.name}.jar"
 }
 
 // configure the maven publication
