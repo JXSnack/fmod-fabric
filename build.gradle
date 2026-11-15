@@ -14,7 +14,7 @@ loom {
 repositories {
     maven { url = "https://maven.parchmentmc.org" }
 
-    %flatmod:maven%
+            % flatmod : maven %
 }
 
 dependencies {
@@ -28,15 +28,43 @@ dependencies {
 
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    // Dependencies
-    %flatmod:dependencies%
+            // Dependencies
+            % flatmod: dependencies %
+}
+
+configurations {
+    modIndirect {
+        extendsFrom configurations.modImplementation
+    }
+}
+
+tasks.register("flatmodClasspath") {
+    dependsOn "configureLaunch"
+    doLast {
+        def allFiles = configurations.compileClasspath.files.toSet()
+        def mcLibFiles = configurations.minecraftLibraries.files.toSet()
+        def directFiles = configurations.modImplementation.files.toSet() -
+                configurations.modIndirect.files.toSet()
+        def indirectFiles = configurations.modIndirect.files.toSet()
+
+        def mcJar = (allFiles - mcLibFiles - directFiles - indirectFiles)
+                .find { it.name.startsWith("minecraft-") }
+
+        def result = [
+                minecraft         : mcJar?.absolutePath ?: "",
+                minecraftLibraries: mcLibFiles*.absolutePath,
+                direct            : directFiles*.absolutePath,
+                indirect          : indirectFiles*.absolutePath
+        ]
+        new File("fmod-classpath.json").text = groovy.json.JsonOutput.toJson(result)
+    }
 }
 
 processResources {
     def resourceProperties = project.properties.findAll { key, value ->
         value instanceof String ||
-        value instanceof Number ||
-        value instanceof Boolean
+                value instanceof Number ||
+                value instanceof Boolean
     }
 
     inputs.properties resourceProperties
@@ -65,7 +93,7 @@ jar {
     inputs.property "projectName", projectName
 
     from("LICENSE") {
-        rename { "${it}_$projectName"}
+        rename { "${it}_$projectName" }
     }
 }
 
