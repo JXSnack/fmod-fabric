@@ -14,7 +14,7 @@ loom {
 repositories {
     maven { url = "https://maven.parchmentmc.org" }
 
-            % flatmod : maven %
+    %flatmod:maven%
 }
 
 dependencies {
@@ -28,8 +28,8 @@ dependencies {
 
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-            // Dependencies
-            % flatmod: dependencies %
+    // Dependencies
+    %flatmod:dependencies%
 }
 
 configurations {
